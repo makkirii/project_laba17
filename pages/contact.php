@@ -23,8 +23,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link rel="icon" href="../assets/images/logo.png">
 </head>
 <?php include '../includes/header.php'; ?>
-<main>
-    <h1>Контакты</h1>
+<section class="hero">
+        <h1>Контакты</h1>
+    </section>
+<main class="contact-simple">
     <?= $answer ?>
     <form method="post">
         <input type="text" name="name" placeholder="Имя">
