@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Главная</title>
     <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="icon" href="/assets/images/logo.png">
 </head>
 <body>
     <?php include 'includes/header.php'; ?>
