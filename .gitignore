@@ -1,17 +1,42 @@
-# Системные файлы
-.DS_Store
-Thumbs.db1
-
-# Логи и кэш
-*.log
-cache/
-
-# Конфиги с паролями
-config.local.php
+# Секреты и конфиги
 .env
+.env.local
+.env.production
+config.local.php
+*.local.php
+secrets/
+credentials/
 
-# Зависимости (если используете Composer)
+# PostgreSQL и бэкапы
+*.sql
+*.dump
+*.backup
+backups/
+dumps/
+*.log
+pg_log/
+
+# PHP
 /vendor/
 /papka/
-composer.lo
+composer.lock
+node_modules/
+
+# Кэш и временные файлы
+cache/
+tmp/
+temp/
+*.tmp
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Системные
+.DS_Store
+Thumbs.db
+desktop.ini
 
