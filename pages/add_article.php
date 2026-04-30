@@ -39,28 +39,60 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <main class="container">
         <h1>➕ Новая статья</h1>
         <?= $msg ?>
-        <form method="post" class="form">
-            <label>Заголовок *<br>
+        <!-- <form method="post" class="form">
+            <label class="form-group">Заголовок *<br>
                 <input type="text" name="title" required 
                        value="<?= htmlspecialchars($_POST['title'] ?? '') ?>">
             </label>
-            <label>Автор<br>
+            <label><br>Автор<br>
                 <input type="text" name="author_name" 
                        value="<?= htmlspecialchars($_POST['author_name'] ?? 'Администратор') ?>">
             </label>
-            <label>Рейтинг (1-5)<br>
+            <label><br>Рейтинг (1-5)
                 <select name="rating">
                     <?php for($i=1;$i<=5;$i++): ?>
                         <option value="<?= $i ?>" <?= (($_POST['rating']??5)==$i)?'selected':'' ?>><?= $i ?></option>
                     <?php endfor; ?>
                 </select>
             </label>
-            <label>Содержание *<br>
+            <label><br>Содержание *<br>
                 <textarea name="content" required rows="10"><?= htmlspecialchars($_POST['content'] ?? '') ?></textarea>
             </label>
-            <button type="submit">💾 Опубликовать</button>
+            <br><button type="submit">💾 Опубликовать</button>
             <a href="/articles.php" class="btn-secondary">Отмена</a>
-        </form>
+        </form> -->
+        <form method="post" class="form">
+    <div class="form-group">
+        <label>Заголовок *</label>
+        <input type="text" name="title" class="form-control" required 
+               value="<?= htmlspecialchars($_POST['title'] ?? '') ?>">
+    </div>
+    
+    <div class="form-group">
+        <label>Автор</label>
+        <input type="text" name="author_name" class="form-control" 
+               value="<?= htmlspecialchars($_POST['author_name'] ?? 'Администратор') ?>">
+    </div>
+    
+    <div class="form-group">
+        <label>Рейтинг (1-5)</label>
+        <select name="rating" class="form-control">
+            <?php for($i=1;$i<=5;$i++): ?>
+                <option value="<?= $i ?>" <?= (($_POST['rating']??5)==$i)?'selected':'' ?>><?= $i ?></option>
+            <?php endfor; ?>
+        </select>
+    </div>
+    
+    <div class="form-group">
+        <label>Содержание *</label>
+        <textarea name="content" class="form-control" required rows="10"><?= htmlspecialchars($_POST['content'] ?? '') ?></textarea>
+    </div>
+    
+    <div class="form-actions">
+        <button type="submit" class="btn btn-success">💾 Опубликовать</button>
+        <a href="/articles.php" class="btn btn-secondary">Отмена</a>
+    </div>
+</form>
     </main>
     <?php include '../includes/footer.php'; ?>
 </body>
